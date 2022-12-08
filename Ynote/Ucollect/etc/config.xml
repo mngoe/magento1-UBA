@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Ynote_Ucollect>
+            <version>0.1.0</version>
+        </Ynote_Ucollect>
+    </modules>
+    <default>
+        <payment>
+            <ucollect>
+                <model>ucollect/standard</model>
+            </ucollect>
+		</payment>
+    </default>
+    <frontend>
+        <routers>
+            <ucollectfrontend>
+                <use>standard</use>
+                <args>
+                    <module>Ynote_Ucollect</module>
+                    <frontName>ucollect</frontName>
+                  </args>
+               </ucollectfrontend>
+        </routers>
+        <layout>
+            <updates>
+                <ucollect>
+                    <file>ucollect.xml</file>
+                </ucollect>
+            </updates>
+        </layout>
+    </frontend>
+
+    <default>
+        <payment>
+            <ucollect>
+                <model>ucollect/standard</model>
+                <active>1</active>
+                <order_status>pending</order_status>
+                <title>Carte UBA</title>
+                <payment_action>sale</payment_action>
+                <submit_url>https://www.uba-group.com.com</submit_url>
+                <merchant_id>Insert merchant id</merchant_id>
+                <allowspecific>0</allowspecific>
+                <sort_order>1</sort_order>
+            </ucollect>
+        </payment>
+    </default>
+
+    <global>
+        <models>
+            <ucollect>
+                <class>Ynote_Ucollect_Model</class>
+            </ucollect>
+        </models>
+        <helpers>
+            <ucollect>
+                <class>Ynote_Ucollect_Helper</class>
+            </ucollect> 
+        </helpers>
+        <blocks>
+            <ucollect>
+                <class>Ynote_Ucollect_Block</class>
+            </ucollect>
+        </blocks>
+    </global>
+     
+</config>
